@@ -1,0 +1,532 @@
+body, html {
+    font-family: "Noto Sans KR", sans-serif;
+    background-color: #D9D9D9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+.container {
+  display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 1200px;
+}
+
+
+.fade-in {
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+.title-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 50px;
+  text-align: center;
+  flex-direction: column;
+  margin-bottom: 20px; /* 하단 마진을 줄여 전체를 위로 올립니다 */
+}
+
+.emoji-container {
+  margin-bottom: 20px;
+}
+
+.emoji {
+  font-size: 9rem;
+}
+
+.title-text {
+  font-size: 3rem;
+  color: #001105;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.title-image {
+  width: 100px;
+  height: 100px;
+  text-align: center;
+}
+
+.header-text, .sub-text, .disclaimer {
+  width: 100%;
+  max-width: 800px;
+  padding: 2rem;
+  border: 5px solid #48484a;
+  background-color: white;
+  border-radius: 1rem;
+  text-align: center;
+  font-family: "Noto Sans KR", sans-serif;
+  color: #333333;
+}
+
+.header-text {
+  margin-top: 10px; /* 상단 마진 제거 */
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.sub-text {
+  margin-top: 10px; /* 상단 마진 제거 */
+  font-size: 1.4rem;
+  text-align: center;
+
+}
+
+.disclaimer {
+  position: fixed;
+  bottom: 20px;
+  left: 50%; /* 좌우 중앙 정렬을 위해 left를 50%로 설정 */
+  transform: translateX(-50%); /* X축으로 50%만큼 이동해 정확히 중앙에 위치 */
+  font-size: 1.3rem; /* 작은 글꼴 크기 */
+  font-weight: normal; /* 글꼴 굵기 제거 */
+  color: #666666; /* 덜 눈에 띄는 색상 */
+  background-color: transparent; /* 배경색 제거 */
+  border: none; /* 테두리 제거 */
+  width: auto; /* 크기 조정 */
+  text-align: center; /* 텍스트 중앙 정렬 */
+  margin: 0; /* 여백 제거 */
+  padding: 0; /* 패딩 제거 */
+}
+
+.chat-disclaimer {
+  position: absolute; /* 절대 위치로 설정하여 자유롭게 배치 */
+  bottom: 10px; /* 하단에 배치 */
+  left: 50%; /* 좌우 중앙 정렬을 위해 left를 50%로 설정 */
+  transform: translateX(-50%); /* X축으로 50%만큼 이동해 정확히 중앙에 위치 */
+  font-size: 1.2rem; /* 작은 글꼴 크기 */
+  color: #666666; /* 덜 눈에 띄는 색상 */
+  text-align: center; /* 텍스트 중앙 정렬 */
+}
+
+.button {
+  background-color: #EEEEEE;
+  color: black;
+  font-size: 1.25rem;
+  padding: 0.75rem 1.5rem;
+  border: 2px solid #EEEEEE;
+  border-radius: 0.5rem;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  margin: 0 auto;
+}
+
+.button:hover {
+  background-color: white;
+  color: #D9D9D9;
+  text-align: center;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px; /* 상단 마진을 줄여 버튼을 위로 올립니다 */
+  margin-bottom: 0; /* 하단 마진 제거 */
+}
+
+#chat-container {
+  display: none;
+  flex-direction: column;
+  width: 90%;
+  max-width: 600px;
+  height: 80%;
+  background-color: #48484a;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  text-align: center;
+}
+
+#chat-header {
+  background-color: transparent;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  font-size: 1.5rem;
+  width: 100%;
+  position: relative;
+}
+
+.separator {
+  border: 0;
+  border-top: 1px solid #ccc;
+  width: 80%;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 100%;
+  margin-top: 10px;
+}
+
+#chat-box {
+  padding: 15px;
+  flex-grow: 1;
+  overflow-y: auto;
+  background-color: #48484a;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  text-align: center;
+}
+
+#user-input {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  text-align: center;
+  background-color: #48484a;
+  padding: 10px;
+  gap: 10px;
+  border-radius: 10px;
+}
+
+#input-wrapper {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+#user-message {
+  flex-grow: 1;
+  padding: 10px;
+  border: none;
+  font-size: 1.25rem;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+#mic-button {
+  padding: 10px;
+  border: none;
+  background-color: #D9D9D9;
+  color: black;
+  cursor: pointer;
+  font-size: 1.25rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+#send-button {
+  padding: 10px;
+  border: none;
+  background-color: #D9D9D9;
+  color: black;
+  cursor: pointer;
+  font-size: 1.25rem;
+  border-radius: 10px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#mic-button.recording {
+  background-color: white;
+  color: white;
+}
+
+#user-input {
+  display: flex;
+  align-items: center; /* 중앙 정렬 */
+  width: 100%;
+  text-align: center;
+  background-color: #48484a;
+  padding: 10px;
+  gap: 10px;
+  border-radius: 10px;
+}
+
+#user-message {
+  flex-grow: 1;
+  padding: 10px;
+  border: none;
+  font-size: 1.25rem;
+  border-radius: 10px;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+
+#send-button{
+  padding: 10px 15px;
+  border: none;
+  background-color: #D9D9D9;
+  color: black;
+  cursor: pointer;
+  font-size: 1.25rem;
+  border-radius: 10px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.end-button-container {
+  padding: 10px;
+  background-color: #D9D9D9;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.end-button {
+  background-color: #eeeeee;
+  color: black;
+  padding: 10px 20px;
+  font-size: 1.25rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.end-button:hover {
+  background-color: white;
+  color: #d9d9d9;
+}
+
+.message {
+  background-color: #48484a;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 5px 0;
+  max-width: 80%;
+  font-size: 1.25rem;
+}
+
+.user-message {
+  align-self: flex-end;
+  background-color: #19a169;
+  color: #fff;
+}
+
+.bot-message {
+  align-self: flex-start;
+  background-color: #262626;
+  color: #fff;
+}
+
+.info-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.info-table-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* 테이블 간 간격 조정 */
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* 기존 info-table 스타일 수정 */
+.info-table {
+  width: 100%; /* Increase the width to make the tables wider */
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  border: 2px solid #94f1a8;
+  border-radius: 15px; /* 테두리 반경 추가 */
+  overflow: hidden; /* 둥근 테두리 밖으로 내용이 넘치지 않도록 설정 */
+  text-align: left; /* 테이블 텍스트 가운데 정렬 */
+}
+
+.info-table thead th {
+  background-color: #a3d9a5;
+  color: #333;
+  padding: 10px;
+  text-align: left;
+  border-bottom: 2px solid #94f1a8;
+}
+
+.info-table tbody td {
+  width: 60%; /* Adjust as needed */
+  word-break: break-word; /* Ensure long words break to fit the cell */
+  background-color: #f9f9f9;
+  color: #333;
+  padding: 10px;
+  border-bottom: 1px solid #e0e0e0;
+  width: 50%; /* Adjust as needed */
+  text-align: center; /* Center align text */
+  vertical-align: middle; /* Vertically center align text */
+}
+
+.info-table tbody td ul {
+  width: 100%;
+  word-break: break-word; /* Ensure long words break to fit the cell */
+  margin: 0;
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center align list items horizontally */
+  justify-content: center; /* Center align list items vertically */
+
+}
+
+.info-table tbody td ul li {
+  margin: 5px 0;
+  width: 100%;
+  text-align: center; /* Center align text */
+}
+
+.info-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.info-table tbody tr:first-child td:first-child {
+  border-top-left-radius: 15px;
+}
+
+.info-table tbody tr:first-child td:last-child {
+  border-top-right-radius: 15px;
+}
+
+.info-table tbody tr:last-child td:first-child {
+  border-bottom-left-radius: 15px;
+}
+
+.info-table tbody tr:last-child td:last-child {
+  border-bottom-right-radius: 15px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.back-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  background-color: #EEEEEE;
+  color: black;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  text-align: center;
+  margin-bottom: 100px;
+}
+
+.back-button:hover {
+  background-color: white;
+  color: rgb(37, 34, 34);
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+.search-input {
+  width: 80%;
+  padding: 10px;
+  margin: 10px 0;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.button-row {
+  display: flex;
+  justify-content: center;
+  gap: 10px; /* 버튼 사이의 간격 */
+  margin-bottom: 20px; /* 버튼 그룹과 다른 요소 사이의 간격 */
+}
+
+.videos-display {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.videos-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between; /* 사이의 간격을 고르게 설정 */
+}
+
+.video-card {
+  padding: 10px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 23%;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.video-card img {
+  width: 100%;
+  height: auto;
+  border-bottom: 2px solid #ccc;
+}
+
+.search-button {
+  background-color: #48484a;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.search-button:hover {
+  background-color: #333;
+}
+/* #mic-button {
+  padding: 10px;
+  border: none;
+  background-color: #D9D9D9;
+  color: black;
+  cursor: pointer;
+  font-size: 1.25rem;
+  border-radius: 10px;
+  margin-left: 10px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#mic-button.recording {
+  background-color: red;
+  color: white;
+} */

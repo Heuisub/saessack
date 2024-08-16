@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>포유와 함께하는 상담</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="/favicon-16x16.ico">
+</head>
+<body>
+    <div class="title-container" id="title1">
+        <div class="emoji-container">
+            <span class="emoji">♥</span>
+        </div>
+        <div class="title-text">
+            당신의 아픔에 공감하는<br> 포유와 함께 이야기를 나눠요.
+        </div>
+    </div>
+    <div class="container fade-in" id="slide1">
+        <div class="sub-text">
+            <b>불법촬영 피해로부터 당신을 보호하고, 필요한 도움을 제공하겠습니다.<br>당신은 혼자가 아닙니다. 언제든지 편하게 말해주세요.</b>
+        </div>
+        <div class="disclaimer">
+            포유와 나눈 이야기는 저장되거나 학습 데이터로 이용되지 않습니다.
+        </div>
+        <div class="button-container">
+            <button id="start-button" class="button">이야기 해보기</button>
+            <button id="video-button" class="button" onclick="window.location.href='video-search.html'">동영상 찾아보기</button>
+            <button id="info-button" class="button">☎️ 도움 요청</button>
+        </div>
+        <div class="sub-text">
+            포유와 나눈 이야기는 절대 외부에 유출되지 않습니다.
+        </div>
+    </div>
+    <div class="container hidden" id="chat-container">
+        <div id="chat-header">포유</div>
+        <hr class="separator">
+        <div id="chat-box"></div>
+        <div id="user-input">
+            <div id="input-wrapper">
+                <input type="text" id="user-message" placeholder="메시지를 입력하세요...">
+                <button id="mic-button">🎤</button>
+            </div>
+            <button id="send-button">전송</button>
+        </div>
+        <div class="chat-disclaimer">
+            포유와 나눈 이야기는 저장되거나 학습 데이터로 이용되지 않습니다.
+        </div>
+    </div>
+    <div class="end-button-container hidden" id="end-button-container">
+        <button id="end-button-chat" class="end-button">상담종료</button>
+    </div>
+
+    <div class="container hidden" id="videosSection">
+      <h1>추천 동영상</h1>
+      <div id="videosContainer" class="videos-display"></div>
+      <button id="back-button-videos" class="back-button">홈으로 돌아가기</button>
+    </div>
+
+    <div class="container hidden" id="info-container">
+        <div class="info-table-container">
+            <table class="info-table">
+                <tbody>
+                    <tr>
+                        <td>한국여성인권진흥원<br>디지털 성범죄 피해자 지원센터</td>
+                        <td>
+                            <ul>
+                                <li>02-735-8994<br>365일 24시간 상담</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>불법촬영물등 신고·삭제 요청 기관</td>
+                        <td><a href="https://kcc.go.kr/user.do?page=A09031400&dc=K09031400">전국 불법촬영물등 신고<br>삭제 요청 기관·단체</a></td>
+                    </tr>
+                    <tr>
+                        <td>여성폭력 사이버 상담소</td>
+                        <td>
+                            <ul>
+                                <li>여성긴급전화 1366<br>365일 24시간 상담</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>성폭력피해상담소</td>
+                        <td><a href="https://www.sisters.or.kr/consult/inform?gad_source=1&gclid=CjwKCAjw4_K0BhBsEiwAfVVZ_3TzqW8hvELOl91m5RltKg7WuzV9w3KzlA_eizEV8SxbnhjTRxa_oRoCQVwQAvD_BwE">한국 성폭력 상담소</a></td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="info-table">
+                <tbody>
+                    <tr>
+                        <td>해바라기센터</td>
+                        <td><a href="http://www.wksunflower.or.kr/bbs/content.php?co_id=sub07_01">전국 해바라기센터<br>연락처</a></td>
+                    </tr>
+                    <tr>
+                        <td>경찰청 사이버수사국</td>
+                        <td><a href="https://ecrm.police.go.kr/minwon/main">사이버범죄 신고시스템<br>(eCRM-상담·제보)</a><br>긴급신고 112<br>365일 24시간 상담</td>
+                    </tr>
+                    <tr>
+                        <td>청소년사이버상담센터</td>
+                        <td><a href="https://www.1388.go.kr/ind/YTOSP_SC_IND_01">온라인 상담</a><br>청소년전화 1388<br>365일 24시간 상담</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <button id="back-button-info" class="back-button">홈으로 돌아가기</button>
+    </div>
+
+    <div class="container hidden" id="end-page">
+        <div class="end-message">
+            <div class="title-text">상담이 종료되었습니다<br>언제든 다시 찾아오세요😊</div>
+        </div>
+        <div class="button-container">
+            <button id="home-button" class="button">홈으로 돌아가기</button>
+            <button id="info-button-end" class="button">☎️ 도움 요청</button>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/webm-to-wav-converter@latest/dist/index.umd.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

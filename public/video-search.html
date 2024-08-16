@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>동영상 추천</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>동영상 추천</h1>
+        <input type="text" id="search-input" class="search-input" placeholder="검색어를 입력하세요">
+        <button id="search-button" class="search-button">검색</button>
+        <div class="videos-container" id="videos-container">
+            <div class="video-card">
+                <img src="https://img.youtube.com/vi/hep1iTc2HOo/0.jpg" alt="Video 1">
+                <h3>#디지털성범죄#해결#방안</h3>
+                <a href="https://www.youtube.com/watch?v=hep1iTc2HOo" target="_blank">Watch Video 1</a>
+            </div>
+            <div class="video-card">
+                <img src="https://img.youtube.com/vi/Dxhcw0mPow8/0.jpg" alt="Video 2">
+                <h3>#법개정#극복#위로</h3>
+                <a href="https://www.youtube.com/watch?v=Dxhcw0mPow8" target="_blank">Watch Video 2</a>
+            </div>
+            <div class="video-card">
+                <img src="https://img.youtube.com/vi/iBm9WWFXUD4/0.jpg" alt="Video 3">
+                <h3>#성범죄박멸#도움</h3>
+                <a href="https://www.youtube.com/watch?v=iBm9WWFXUD4" target="_blank">Watch Video 3</a>
+            </div>
+            <div class="video-card">
+                <img src="https://img.youtube.com/vi/E98LiPJwkvo/0.jpg" alt="Video 4">
+                <h3>#변호사#법#대처방법</h3>
+                <a href="https://www.youtube.com/watch?v=E98LiPJwkvo" target="_blank">Watch Video 4</a>
+            </div>
+            <div class="video-card">
+                <img src="https://img.youtube.com/vi/FJaM-Qh3DJo/0.jpg" alt="Video 5">
+                <h3>#변호사#이겨내기#대응</h3>
+                <a href="https://www.youtube.com/watch?v=FJaM-Qh3DJo" target="_blank">Watch Video 5</a>
+            </div>
+            <div class="video-card">
+                <img src="https://img.youtube.com/vi/BYkEZFi9-pI/0.jpg" alt="Video 6">
+                <h3>#디성센터#상담</h3>
+                <a href="https://www.youtube.com/watch?v=BYkEZFi9-pI" target="_blank">Watch Video 6</a>
+            </div>
+            <div class="video-card">
+                <img src="https://img.youtube.com/vi/HMWMCS8XHyo/0.jpg" alt="Video 7">
+                <h3>#불법촬영협박#대처법</h3>
+                <a href="https://www.youtube.com/watch?v=HMWMCS8XHyo" target="_blank">Watch Video 7</a>
+            </div>
+            <div class="video-card">
+                <img src="https://img.youtube.com/vi/vKh9y5KMIe4/0.jpg" alt="Video 8">
+                <h3>#영상삭제#정부지원</h3>
+                <a href="https://www.youtube.com/watch?v=vKh9y5KMIe4" target="_blank">Watch Video 8</a>
+            </div>
+        </div>
+        <button class="search-button" onclick="window.location.href='index.html'">홈으로</button>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
